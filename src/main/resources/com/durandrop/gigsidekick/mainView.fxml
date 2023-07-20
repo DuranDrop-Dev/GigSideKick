@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainContainer" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="740.0"
+      minWidth="320.0" prefHeight="740.0" prefWidth="320.0" styleClass="mainContainer" stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.durandrop.gigsidekick.MainController">
+    <TabPane fx:id="rootPane" prefHeight="906.0" prefWidth="320.0" side="BOTTOM">
+        <Tab fx:id="homeTab" closable="false" styleClass="lightTab" text="Home">
+            <GridPane fx:id="gridPane" alignment="CENTER" minHeight="689.0" minWidth="320.0" prefHeight="689.0"
+                      prefWidth="320.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.4000244140625" minWidth="10.0"
+                                       prefWidth="160.20001220703125"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.5999755859375" minWidth="10.0"
+                                       prefWidth="159.79998779296875"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="45.599996948242186" minHeight="10.0"
+                                    prefHeight="26.400018310546876" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="130.3999816894531" minHeight="10.0" prefHeight="106.4"
+                                    vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="103.39998779296874" minHeight="0.0" prefHeight="69.4000183105469"
+                                    vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="100.80001831054688" minHeight="10.0"
+                                    prefHeight="33.888895670572936" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="94.20002441406251" minHeight="10.0"
+                                    prefHeight="36.111124674479186" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="98.79996337890623" minHeight="10.0"
+                                    prefHeight="39.66667344835071" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="97.59995117187498" minHeight="10.0"
+                                    prefHeight="40.111124674479186" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="90.99997558593748" minHeight="10.0"
+                                    prefHeight="39.55555894639758" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="103.5555521647135" minHeight="0.0" prefHeight="40.22224256727429"
+                                    vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="96.99998304578992" minHeight="10.0"
+                                    prefHeight="40.66668023003467" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="135.77777777777771" minHeight="10.0"
+                                    prefHeight="42.11115180121533" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="165.00004069010419" minHeight="10.0"
+                                    prefHeight="108.33329264322913" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="143.11109754774304" minHeight="10.0"
+                                    prefHeight="29.44439697265625" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <ImageView fx:id="logoFrame" fitHeight="51.0" fitWidth="300.0" nodeOrientation="INHERIT"
+                           pickOnBounds="true" preserveRatio="true" x="10.0" GridPane.columnSpan="2"
+                           GridPane.halignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="10.0" right="10.0" top="15.0"/>
+                    </GridPane.margin>
+                    <Image url="@logo.png"/>
+                </ImageView>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="300.0"
+                       text="(Please enter your earnings:)" GridPane.columnSpan="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="inputField" prefHeight="108.0" prefWidth="300.0" promptText="0.00"
+                           styleClass="textField" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                    <GridPane.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <Button layoutY="24.0" minWidth="140.0" mnemonicParsing="false" onAction="#enterMethod"
+                        prefHeight="44.0" prefWidth="144.0" text="Enter" GridPane.halignment="CENTER"
+                        GridPane.rowIndex="3">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Button minWidth="140.0" mnemonicParsing="false" onAction="#setUndo" prefHeight="44.0"
+                        prefWidth="140.0" text="Undo" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                        GridPane.rowIndex="3">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <RadioButton fx:id="doorDash" contentDisplay="CENTER" minWidth="300.0"
+                             mnemonicParsing="false" onAction="#setDoorDash" prefHeight="20.0"
+                             prefWidth="300.0" selected="true" text="DoorDash" GridPane.columnSpan="2"
+                             GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="mainToggleGroup"/>
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="uberEats" contentDisplay="CENTER" minWidth="300.0"
+                             mnemonicParsing="false" onAction="#setUberEats" prefHeight="20.0"
+                             prefWidth="300.0" text="UberEats" toggleGroup="$mainToggleGroup"
+                             GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="grubHub" contentDisplay="CENTER" minWidth="300.0"
+                             mnemonicParsing="false" onAction="#setGrubHub" prefHeight="20.0"
+                             prefWidth="300.0" text="GrubHub" toggleGroup="$mainToggleGroup"
+                             GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="cornerShop" contentDisplay="CENTER" minWidth="300.0"
+                             mnemonicParsing="false" onAction="#setCornerShop" prefHeight="20.0"
+                             prefWidth="300.0" text="Cornershop" toggleGroup="$mainToggleGroup"
+                             GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="instaCart" contentDisplay="CENTER" minWidth="300.0"
+                             mnemonicParsing="false" onAction="#setInstaCart" prefHeight="20.0"
+                             prefWidth="300.0" text="Instacart" toggleGroup="$mainToggleGroup"
+                             GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </RadioButton>
+                <Label fx:id="outputLabel" alignment="CENTER" contentDisplay="CENTER" minWidth="300.0"
+                       prefHeight="18.0" prefWidth="300.0" GridPane.columnSpan="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="totalLabel" alignment="CENTER" contentDisplay="CENTER" minWidth="300.0"
+                       prefHeight="18.0" prefWidth="300.0" GridPane.columnSpan="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="10">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Label fx:id="grandTotalLabel" alignment="CENTER" contentDisplay="CENTER" minWidth="300.0"
+                       prefHeight="18.0" prefWidth="300.0" styleClass="grandTotal" stylesheets="@style.css"
+                       GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="11">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Button minWidth="150.0" mnemonicParsing="false" onAction="#setFlush" prefHeight="44.0"
+                        prefWidth="150.0" text="Reset All" GridPane.columnSpan="2"
+                        GridPane.halignment="CENTER" GridPane.rowIndex="12">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Button>
+                <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="300.0" minWidth="300.0"
+                       prefWidth="300.0" GridPane.columnSpan="2" GridPane.rowIndex="13">
+                    <GridPane.margin>
+                        <Insets left="10.0" right="10.0"/>
+                    </GridPane.margin>
+                </Label>
+            </GridPane>
+        </Tab>
+        <Tab fx:id="settingsTab" closable="false" styleClass="lightTab" text="Settings">
+            <GridPane alignment="CENTER" minHeight="132.0" minWidth="116.0" prefHeight="690.0"
+                      prefWidth="320.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.199951171875" minWidth="10.0"
+                                       prefWidth="159.4000244140625"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.199951171875" minWidth="10.0"
+                                       prefWidth="160.5999755859375"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="56.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="59.79997558593749" minHeight="15.0"
+                                    prefHeight="50.99998779296874" valignment="CENTER" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="466.6000122070312" minHeight="0.0" prefHeight="23.79998168945312"
+                                    vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="85.0" minHeight="0.0" prefHeight="35.8000183105469"
+                                    vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="114.4000244140625" minHeight="7.199969482421864"
+                                    prefHeight="37.39999999999998" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="148.00003051757812" minHeight="9.400012207031239"
+                                    prefHeight="35.79996337890623" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="167.20001220703125" minHeight="10.20001220703125"
+                                    prefHeight="38.19999999999999" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="200.00006713867185" minHeight="10.0"
+                                    prefHeight="38.39998779296877" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="236.20001831054685" minHeight="10.0"
+                                    prefHeight="75.19997558593752" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="198.8000549316406" minHeight="10.0"
+                                    prefHeight="94.19999999999999" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="150.39999999999998" minHeight="10.0"
+                                    prefHeight="109.39999999999998" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <ImageView fx:id="logoFrame2" fitHeight="51.0" fitWidth="300.0" pickOnBounds="true"
+                           preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                    <GridPane.margin>
+                        <Insets left="10.0" right="10.0" top="15.0"/>
+                    </GridPane.margin>
+                    <Image url="@logo.png"/>
+                </ImageView>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="300.0"
+                       text="Theme:" GridPane.columnSpan="2" GridPane.halignment="CENTER"
+                       GridPane.rowIndex="1">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <RadioButton fx:id="lightMode" contentDisplay="CENTER" mnemonicParsing="false"
+                             onAction="#setLight" prefHeight="20.0" prefWidth="300.0" text="Light Mode"
+                             GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="themeGroup"/>
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="darkMode" contentDisplay="CENTER" mnemonicParsing="false"
+                             onAction="#setDark" prefHeight="20.0" prefWidth="300.0" selected="true"
+                             text="Dark Mode" toggleGroup="$themeGroup" GridPane.columnSpan="2"
+                             GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </RadioButton>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="300.0"
+                       text="Choose vendors to display:" GridPane.columnSpan="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="300.0"
+                       text="(Unchecking an item will remove it's data)" GridPane.columnSpan="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                    <font>
+                        <Font size="10.0"/>
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0"/>
+                    </padding>
+                </Label>
+                <CheckBox fx:id="ddTrue" mnemonicParsing="false" onAction="#ddFalse" prefWidth="300.0"
+                          selected="true" text="DoorDash" GridPane.columnSpan="2"
+                          GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="ueTrue" mnemonicParsing="false" onAction="#ueFalse" prefWidth="300.0"
+                          selected="true" text="UberEats" GridPane.columnSpan="2"
+                          GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="ghTrue" mnemonicParsing="false" onAction="#ghFalse" prefWidth="300.0"
+                          selected="true" text="GrubHub" GridPane.columnSpan="2"
+                          GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="csTrue" mnemonicParsing="false" onAction="#csFalse" prefWidth="300.0"
+                          selected="true" text="Cornershop" GridPane.columnSpan="2"
+                          GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </CheckBox>
+                <CheckBox fx:id="icTrue" mnemonicParsing="false" onAction="#icFalse" prefWidth="300.0"
+                          selected="true" text="Instacart" GridPane.columnSpan="2"
+                          GridPane.halignment="CENTER" GridPane.rowIndex="10">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </CheckBox>
+            </GridPane>
+        </Tab>
+    </TabPane>
+</VBox>
