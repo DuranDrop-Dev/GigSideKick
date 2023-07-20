@@ -8,3 +8,4 @@
 <h3>Future?</h3>
 <li>I would like to add save to file feature</li>
 <li>I would also like to add a calendar function that would retrieve past earnings.</li>
+<li>Currently on the back burner</li>
